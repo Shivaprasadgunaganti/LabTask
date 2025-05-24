@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./Signup.css";
+import { Link } from 'react-router-dom';
 export const Signup = () => {
     const [name,setName]=useState("")
     const [mail,setMail]=useState("")
@@ -29,6 +30,7 @@ const formHandler=(e)=>{
 
   return (
     <div>
+        <h1>Sign Up form</h1>
          <div className='signup-main'>
             <form onSubmit={formHandler} className='form-main'>
                 <label>userName :</label>
@@ -40,7 +42,7 @@ const formHandler=(e)=>{
                 <label >Password :</label>
                 <input type="text" placeholder='Enter Password' onChange={passwordHandler} value={password}/>
                 <br />
-                <button type='submit'>Submit</button>
+                <Link to={"/login"}><button type='submit'>Submit</button></Link>
             </form>
          </div>
     </div>
